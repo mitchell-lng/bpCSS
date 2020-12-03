@@ -1,34 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Raleway&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 :root {
   --corner-radius: 1%;
   --soft-grey: rgba(237, 237, 237, 1);
+  --dark: rgb(0, 0, 0);
 }
 
 * {
   padding: 0;
   margin: 0;
-  font-family: 'Raleway', sans-serif;
   letter-spacing: 0.05em;
-}
-
-.flex {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin: 20px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 0;
+  font-family: sans-serif;
 }
 
 /*
 
-FOR NAVBARS
+FOR HEADERS
+
+<header class="header-left" style="background-image: url('https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/advice/maps-satellite-images/satellite-image-of-globe.jpg')">
+  <div>
+    <h1>Blam Pop</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id enim et purus consectetur rhoncus in non eros. Etiam id ex molestie, condimentum lacus ut, commodo magna.</p>
+  </div>
+</header>
+
+*/
+
+header {
+  height: 80vh;
+  min-height: 300px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  display: flex;
+}
+
+header div {
+  margin: auto;
+}
+
+header div h1 {
+  font-weight: 200;
+  font-size: 5em;
+}
+
+header div p {
+  max-width: 30vw;
+  font-size: 1.5em;
+}
+
+/* HEADER WITH RIGHT DESCRIPTION */
+header.header-right div {
+  margin-left: 15vw;
+}
+
+/* HEADER WITH LEFT DESCRIPTION */
+header.header-left div {
+  margin-right: 15vw;
+  text-align: right;
+}
+
+/* HEADER WITH CENTER DESCRIPTION */
+header.header-middle div {
+  text-align: center;
+}
+
+header.header-middle div h1 {
+  margin: 0;
+  display: inline-block;
+  padding: 20px;
+}
+
+
+/*
+
+FOR NAVBARS + FOOTER NAV
 
 EX:
 
@@ -47,7 +94,6 @@ EX:
 .nav-logo {
   font-size: 1.4rem;
   font-weight: 500;
-  font-family: 'Montserrat', sans-serif;
   vertical-align: center;
 }
 
@@ -55,14 +101,14 @@ nav {
   background-color: var(--soft-grey);
 }
 
-nav ul {
+nav ul, footer > div > ul {
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
   padding: 20px 30px;
 }
 
-nav ul a, nav > ul > li {
+nav ul a, nav > ul > li, footer > div > ul > a {
   padding: 10px 20px;
   margin-left: 10px;
   margin-right: 10px;
@@ -135,4 +181,158 @@ EX:
   padding: 20px 30px;
   border-bottom-left-radius: var(--corner-radius);
   border-bottom-right-radius: var(--corner-radius);
+}
+
+/*
+
+FOR FOOTER
+
+EX:
+
+<footer>
+  <div class="">
+    <ul>
+      <a href="#"><li>Home</li></a>
+      <a href="#"><li>About Us</li></a>
+      <a href="#"><li>Contact</li></a>
+    </ul>
+    <div class="line-break"></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris elit mi, convallis non tellus et, sodales facilisis ex. Phasellus quis facilisis enim. Integer maximus eget lectus et vulputate. Donec vitae condimentum magna. Nunc a mi vulputate, sollicitudin tortor cursus, luctus sem. Suspendisse mattis justo eget dolor feugiat, a congue odio egestas.</p>
+    <div class="social-media">
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-linkedin"></a>
+      <a href="#" class="fa fa-youtube"></a>
+      <a href="#" class="fa fa-instagram"></a>
+      <a href="#" class="fa fa-pinterest"></a>
+    </div>
+  </div>
+</footer>
+<footer>
+  <div class="">
+    <h4>©2020 SomeCorpName</h4>
+  </div>
+</footer>
+
+*/
+
+footer {
+  background-color: var(--dark);
+  padding: 20px 30px;
+}
+
+footer div h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 200;
+  text-align: center;
+}
+
+footer div ul {
+  justify-content: space-around;
+  width: 75vw;
+  margin: auto;
+}
+
+footer > div > ul > a {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-bottom: 2px solid var(--dark);
+}
+
+footer > div > ul > a:hover {
+  border-bottom: 2px solid white;
+  border-radius: 0;
+}
+
+footer div p {
+  margin: auto;
+  width: 40vw;
+  padding-top: 4vw;
+  padding-bottom: 1vw;
+  font-size: 1.3em;
+}
+
+footer div > * {
+  color: white;
+}
+
+/*
+
+MISC ELEMENTS
+
+*/
+
+.line-break {
+  width: 70vw;
+  border-top: 1px solid var(--soft-grey);
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  letter-spacing: 0;
+}
+
+/*
+
+SOCIAL MEDIA
+
+*/
+
+.social-media {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.fa {
+  padding: 8px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50px;
+  margin: 2px;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
 }

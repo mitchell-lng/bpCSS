@@ -1,13 +1,11 @@
-Mobile Optimization
 Basic
-* Header
-  * header-right + description
-  * header-middle
-  * header-left + description
-* footer
-* body-sections
-  * header + text
+* body-sections (modern)
+  * H2 + text
   * image-right + header + text
   * image-left + header + text
+* body-sections
+  * single middle column for all content (smc)
 * contact form
 * "Meet the team"
+
+Optimize all for mobile
