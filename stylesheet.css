@@ -1,7 +1,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 :root {
-  --corner-radius: 1%;
+  --corner-radius: 25px;
   --soft-grey: rgba(237, 237, 237, 1);
   --dark: rgb(0, 0, 0);
 }
@@ -16,6 +16,8 @@
 /*
 
 FOR HEADERS
+
+EX:
 
 <header class="header-left" style="background-image: url('https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/advice/maps-satellite-images/satellite-image-of-globe.jpg')">
   <div>
@@ -121,6 +123,10 @@ nav ul a, nav > ul > li, footer > div > ul > a {
   margin-bottom: auto;
 }
 
+.rounded {
+  border-radius: var(--corner-radius);
+}
+
 .active {
   cursor:default;
 }
@@ -131,6 +137,36 @@ nav ul a:hover, .active {
 
 .nav-right {
   margin-left: auto;
+}
+
+/*
+
+MAIN ELEMENTS FOR PAGES
+
+EX:
+
+<div class="flex main-element">
+  <div>
+    <h1>Thinga Ma Bob</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis finibus ipsum. Pellentesque molestie quis lectus vitae molestie. Nulla maximus lectus vitae enim luctus dictum. Etiam nulla est, molestie ac semper sed, consequat vel nibh. Donec varius tellus at convallis scelerisque. Quisque porttitor sagittis sodales. Suspendisse vestibulum efficitur massa, quis pellentesque augue facilisis id. In aliquet in est non condimentum. Nullam in justo dui. Etiam ac accumsan velit.</p>
+  </div>
+  <img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt="Main Image" class="rounded">
+</div>
+
+*/
+
+.main-element {
+  margin-top: calc(2vw + 20px);
+  margin-bottom: calc(2vw + 20px);
+}
+
+.main-element img {
+  width: 40%;
+  min-width: 200px;
+}
+
+.main-element div {
+  width: 50%;
 }
 
 /*
@@ -151,6 +187,7 @@ EX:
 
 .image {
   width: 100%;
+  min-width: 10vw;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -171,6 +208,10 @@ EX:
   min-height: 40px;
 }
 
+.card-body h1, .card-body h2, .card-body h3, .card-body h4, .card-body h5, .card-body h6 {
+  font-weight: 200;
+}
+
 .card-image {
   border-top-left-radius: var(--corner-radius);
   border-top-right-radius: var(--corner-radius);
@@ -182,6 +223,27 @@ EX:
   border-bottom-left-radius: var(--corner-radius);
   border-bottom-right-radius: var(--corner-radius);
 }
+
+/*
+
+FOR "MEET THE TEAM"
+
+EX:
+
+<section class="flex">
+  <div class="card rounded">
+    <!-- Image from https://pixabay.com/users/rzierik-16088724/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5141069 -->
+    <div class="image-short image" style="background-image: url('images/beak-5141069_640.jpg')"></div>
+    <div class="card-body">
+      <h3>Michael Lang</h3>
+      <p>Full Stack Web Developer</p>
+    </div>
+  </div>
+</section>
+
+*/
+
+
 
 /*
 
@@ -276,7 +338,7 @@ MISC ELEMENTS
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 20px;
+  flex-direction: row;
 }
 
 h1, h2, h3, h4, h5, h6 {
