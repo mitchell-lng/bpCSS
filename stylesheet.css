@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Raleway&display=swap');
+
+:root {
+  --corner-radius: 1%;
+  --soft-grey: rgba(237, 237, 237, 1);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0;
+}
+
+/*
+
+FOR NAVBARS
+
+EX:
+
+<nav>
+  <ul>
+    <li class="nav-logo">LOGO</li>
+    <a href="#hello" class="active"><li>Home</li></a>
+    <a href=""><li>About Us</li></a>
+    <a href="" class="nav-right"><li>Contact</li></a>
+  </ul>
+</nav>
+
+*/
+
+/* Creates simple text logo */
+.nav-logo {
+  font-size: 1.4rem;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  vertical-align: center;
+}
+
+nav {
+  background-color: var(--soft-grey);
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 20px 30px;
+}
+
+nav ul a, nav > ul > li {
+  padding: 10px 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+  border-radius: 25px;
+  color: black;
+  border: 1px solid transparent;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.active {
+  cursor:default;
+}
+
+nav ul a:hover, .active {
+  border: 1px solid black;
+}
+
+.nav-right {
+  margin-left: auto;
+}
+
+/*
+
+FOR CARDS
+
+EX:
+<div class="flex">
+  <div class="card">
+    <div class="image image-medium card-radius" style="background-image: url('https://miro.medium.com/max/10000/0*wZAcNrIWFFjuJA78')"></div>
+    <div class="card-body">
+      <h1>Hello</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis finibus ipsum. Pellentesque molestie quis lectus vitae molestie. Nulla maximus lectus vitae enim luctus dictum. Etiam nulla est, molestie ac semper sed, consequat vel nibh. Donec varius tellus at convallis scelerisque. Quisque porttitor sagittis sodales. Suspendisse vestibulum efficitur massa, quis pellentesque augue facilisis id. In aliquet in est non condimentum. Nullam in justo dui. Etiam ac accumsan velit.</p>
+    </div>
+  </div>
+</div>
+*/
+
+.image {
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image-tall {
+  height: 15vw;
+  min-height: 100px;
+}
+
+.image-medium {
+  height: 12vw;
+  min-height: 70px;
+}
+
+.image-short {
+  height: 9vw;
+  min-height: 40px;
+}
+
+.card-image {
+  border-top-left-radius: var(--corner-radius);
+  border-top-right-radius: var(--corner-radius);
+}
+
+.card-body {
+  background-color: var(--soft-grey);
+  padding: 20px 30px;
+  border-bottom-left-radius: var(--corner-radius);
+  border-bottom-right-radius: var(--corner-radius);
+}

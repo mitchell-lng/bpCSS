@@ -1,0 +1,13 @@
+Mobile Optimization
+Basic
+* Header
+  * header-right + description
+  * header-middle
+  * header-left + description
+* footer
+* body-sections
+  * header + text
+  * image-right + header + text
+  * image-left + header + text
+* contact form
+* "Meet the team"
