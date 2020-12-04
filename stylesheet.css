@@ -243,7 +243,53 @@ EX:
 
 */
 
+/*
 
+FOR FORMS
+
+EX:
+
+<section>
+  <form class="" action="index.html" id="form">
+    <div class="form-item">
+      <label for="chemFormula">Chemical Formula:</label>
+      <input type="text" name="chemFormula" value="" id="chemFormula" placeholder="Chemical Equation">
+    </div>
+    <input type="submit" value="Submit">
+  </form>
+</section>
+
+*/
+
+.form-item {
+  width: 24vw;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+}
+
+form label {
+  padding: 10px 20px;
+}
+
+form input {
+  margin: auto;
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: var(--corner-radius);
+  transition: 0.3s;
+  outline: none;
+}
+
+form > input[type="submit"] {
+  display: block;
+  border: 1px solid transparent;
+}
+
+form > input[type="submit"]:hover {
+  border: 1px solid black;
+}
 
 /*
 
